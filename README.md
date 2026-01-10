@@ -3,7 +3,7 @@
 A small library app from The Odin Project. Users can add books, toggle read status, and remove books. Book data is stored in a JavaScript array (`myLibrary`) and the UI is rendered from that data.
 
 ## Live Demo
-- Add your GitHub Pages link here once deployed
+- https://llani_rainey.github.io/odin-library/
 
 ## Features
 - Add books (title, author, pages, read status)
