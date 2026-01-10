@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llani's Library</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Llani's Library</h1>
+
+    <p id="message" aria-live="polite"></p>
+
+    <form id="book-form">
+        <input id="title" name="title" placeholder="Title" required>
+        <input id="author" name="author" placeholder="Author" required>
+        <input id="pages" name="pages" type="number" min="1" placeholder="Pages" required>
+        <label>
+            Read
+            <input id="read" name="read" type="checkbox">
+        </label>
+        <button type="submit">Add book</button>
+    </form>
+
+
+    <table id="library-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Read</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="library-body">
+            <!-- JS will render rows here -->
+        </tbody>
+    </table>
+    
+</body>
+</html>
