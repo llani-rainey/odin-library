@@ -1,13 +1,20 @@
 
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = Number(pages); // not required but can prevent future bugs if try to do math or concacate ratehr than using the string format
-    this.read = Boolean(read); // not required as comes as a boolean but good practice to make robust
-    this.id = crypto.randomUUID();
-};
+class Book {
+    constructor(title , author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = Number(pages); // not required but can prevent future bugs if try to do math or concacate ratehr than using the string format
+        this.read = Boolean(read); // not required as comes as a boolean but good practice to make robust
+        this.id = crypto.randomUUID();
+    }
+
+    toggleRead() {
+        this.read = !this.read;
+    }
+
+} // no semicolon as its a statement, would use if we were assigning it to a variable (class expression)
 
 
 function addBookToLibrary(title, author, pages, read) {
@@ -57,7 +64,7 @@ function removeBookById(id) {
 
 function toggleReadById(id) {
     const book = myLibrary.find(b => b.id === id);
-    if (book) book.read = !book.read; // if such book exists/truthy, then flip it
+    if (book) book.toggleRead(); // if such book exists/truthy, then flip it
 }
 
 libraryBodyEl.addEventListener("click", (e) => {
