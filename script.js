@@ -85,7 +85,7 @@ formEl.addEventListener("submit", (e) => {
     const title = document.querySelector("#title").value;
     const author = document.querySelector("#author").value;
     const pages = document.querySelector("#pages").value;
-    const read = document.querySelector("#read").checked;
+    const read = document.querySelector("#read").checked; //.checked is a property on certain form elements mainly checkbox and radio
 
     const added = addBookToLibrary(title, author, pages, read);
 
@@ -94,7 +94,7 @@ formEl.addEventListener("submit", (e) => {
         return;
     }
 
-    messageEl.textContent = "";
+    messageEl.textContent = ""; //clears any old duplicate message
     formEl.reset();
     renderLibrary();
 });

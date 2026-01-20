@@ -1,3 +1,4 @@
+/* Theme tokens shared across the page. */
 :root {
     --bg: #0b1020;
     --panel: rgba(255, 255, 255, 0.06);
@@ -9,10 +10,12 @@
     --radius: 14px;
 }
 
+/* Use predictable sizing for layout math. */
 * {
     box-sizing: border-box;
 }
 
+/* Base page layout + atmospheric background. */
 body {
     margin: 0;
     min-height: 100vh;
@@ -26,6 +29,7 @@ body {
     padding: 40px 18px;
 }
 
+/* Page title sizing and spacing. */
 h1 {
     max-width: 980px;
     margin: 0 auto 18px;
@@ -34,6 +38,7 @@ h1 {
 
 }
 
+/* Status message area above the form. */
 #message {
     max-width: 980px;
     margin: 0 auto 14px;
@@ -44,10 +49,12 @@ h1 {
     color: var(--muted);
 }
 
+/* Hide the message wrapper when there is nothing to say. */
 #message:empty {
     display: none;
 }
 
+/* Main form layout uses a compact grid. */
 #book-form {
     max-width: 980px;
     margin: 0 auto 18px;
@@ -63,6 +70,7 @@ h1 {
     align-items: center;
 }
 
+/* Consistent input styling across field types. */
 #book-form input[type="text"],
 #book-form input[type="number"],
 #book-form input:not([type]) {
@@ -75,15 +83,18 @@ h1 {
     outline: none;
 }
 
+/* Softer placeholder color for contrast balance. */
 #book-form input::placeholder {
     color: rgba(255, 255, 255, 0.55);
 }
 
+/* High-contrast focus ring for accessibility. */
 #book-form input:focus {
     border-color: rgba(120, 110, 255, 0.6);
     box-shadow: 0 0 0 4px rgba(120, 110, 255, 0.18);
 }
 
+/* Inline checkbox label styling. */
 #book-form label {
     display: inline-flex;
     gap: 8px;
@@ -96,6 +107,7 @@ h1 {
     white-space: nowrap;
 }
 
+/* Primary submit action styling. */
 #book-form button[type="submit"] {
     justify-self: end;
     padding: 10px 14px;
@@ -107,15 +119,18 @@ h1 {
     transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
 }
 
+/* Subtle lift on hover to signal interactivity. */
 #book-form button[type="submit"]:hover {
     background: rgba(120, 110, 255, 0.26);
     transform: translateY(-1px);
 }
 
+/* Reset lift when pressed. */
 #book-form button[type="submit"]:active {
     transform: translateY(0);
 }
 
+/* Table container with rounded edges and glassy panel. */
 #library-table {
     width: min(980px, 100%);
     margin: 0 auto;
@@ -128,6 +143,7 @@ h1 {
     box-shadow: var(--shadow);
 }
 
+/* Header row styling. */
 #library-table thead th {
     text-align: left;
     font-weight: 600;
@@ -137,6 +153,7 @@ h1 {
     border-bottom: 1px solid var(--border);
 }
 
+/* Body cell spacing and dividers. */
 #library-table tbody td {
     padding: 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.10);
@@ -144,25 +161,30 @@ h1 {
     vertical-align: middle;
 }
 
+/* Hover highlight for row scanning. */
 #library-table tbody tr:hover td {
     background: rgba(255, 255, 255, 0.04);
 }
 
+/* Clean end cap for the final row. */
 #library-table tbody tr:last-child td {
     border-bottom: none;
 }
 
+/* Keep numeric/short fields from wrapping. */
 #library-table td:nth-child(3),
 #library-table td:nth-child(4) {
     white-space: nowrap;
 }
 
+/* Stack action buttons horizontally. */
 #library-table td:last-child {
     display: flex;
     gap: 8px;
     align-items: center;
 }
 
+/* Default table button styling. */
 #library-table button {
     padding: 8px 10px;
     border-radius: 10px;
@@ -173,20 +195,24 @@ h1 {
     transition: transform 120ms ease, background 120ms ease;
 }
 
+/* Hover lift for table actions. */
 #library-table button:hover {
     background: rgba(255, 255, 255, 0.09);
     transform: translateY(-1px);
 }
 
+/* Destructive action styling. */
 #library-table button[data-action="remove"] {
     border-color: rgba(255, 90, 110, 0.55);
     background: rgba(255, 90, 110, 0.14);
 }
 
+/* Stronger hover for destructive action. */
 #library-table button[data-action="remove"]:hover {
     background: rgba(255, 90, 110, 0.22);
 }
 
+/* Responsive adjustments for smaller screens. */
 @media (max-width: 780px) {
     #book-form {
         grid-template-columns: 1fr 1fr;
